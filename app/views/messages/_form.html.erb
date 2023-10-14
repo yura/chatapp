@@ -1,0 +1,12 @@
+<%= form_with model: message, id: 'new_message_form' do |form| %>
+  <%= form.hidden_field :chat_id %>
+
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

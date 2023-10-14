@@ -1,14 +1,10 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Chats</h1>
+
+<%= link_to "New chat", new_chat_path %>
 
 <div id="chats">
   <% @chats.each do |chat| %>
-    <%= render chat %>
-    <p>
-      <%= link_to "Show this chat", chat %>
-    </p>
+    <h2><%= link_to chat.name, chat %>
   <% end %>
 </div>
 
-<%= link_to "New chat", new_chat_path %>
