@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <%= turbo_stream_from 'flash' %>
+    <strong style="float:right">
+      <%= turbo_frame_tag 'flash' %>
+    </strong>
     <%= yield %>
   </body>
 </html>

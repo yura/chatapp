@@ -1,15 +1,13 @@
-<%= turbo_stream_from 'messages' %>
-
 <%= link_to "Back to chats", chats_path %>
 
 <h1><%= @chat.name %></h1>
 
-<div id="messages">
-  <% @chat.messages.each do |m| %>
-    <%= render m %>
-  <% end %>
-</div>
+<%= turbo_stream_from 'messages' %>
+<%= turbo_frame_tag 'messages' do %>
+  <%= render @chat.messages %>
+<% end %>
 
-<%= render "messages/form", message: Message.new(chat: @chat) %>
-
+<%= turbo_frame_tag 'new_message_form' do %>
+  <%= render "messages/form", message: Message.new(chat: @chat) %>
+<% end %>
 
