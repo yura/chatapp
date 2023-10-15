@@ -1,24 +1,16 @@
-# README
+# ChatApp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Пример использования
 
-Things you may want to cover:
+### Список чатов
 
-* Ruby version
+```sh
+curl -H 'Content-Type: application/json' http://localhost:3000/api/v1/chats
+```
 
-* System dependencies
+### Создание сообщения в чате с id = 1
 
-* Configuration
+```sh
+curl -X POST -H 'Content-Type: application/json' -d '{"message":{"body":"James Bond 2","chat_id":1}}' http://localhost:3000/api/v1/messages
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
