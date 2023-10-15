@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  resources :messages
   resources :chats
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  resources :messages
 
-  # Defines the root path route ("/")
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :chats, only: [ :index ]
+    end
+  end
+
   root "chats#index"
 end
